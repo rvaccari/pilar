@@ -14,3 +14,7 @@ test:
 
 format:
 	black backend
+
+
+ci:
+	ENVIRONMENT_NAME=testing pytest tests -q -x --disable-warnings
