@@ -13,7 +13,7 @@ test:
 
 
 format:
-	black backend
+	black backend tests
 
 
 ci:
