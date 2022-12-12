@@ -1,8 +1,12 @@
 help:
-	@echo -e "install             Initialize the environment."
-	@echo -e "test                Run the full test suite."
-	@echo -e "format              Black code formatter."
-	@echo -e "lint                Code style checker."
+	@echo "install             Initialize the environment."
+	@echo "test                Run the full test suite."
+	@echo "format              Black code formatter."
+	@echo "lint                Code style checker."
+	@echo "run                 Run app."
+	@echo "docker-build        Build docker image."
+	@echo "docker-up           Start docker container."
+	@echo "docker-stop         Stop docker container."
 
 
 install:
@@ -26,3 +30,19 @@ lint:
 	rm -rf .pytest_cache
 	rm -f .coverage
 	ENVIRONMENT_NAME=testing pytest tests backend --mypy --black --disable-warnings $(ARGS)
+
+
+run:
+	flask run
+
+
+docker-build:
+	docker build .
+
+
+docker-up:
+	docker compose up -d
+
+
+docker-stop:
+	docker compose stop
