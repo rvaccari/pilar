@@ -5,7 +5,7 @@ if [ -d ".venv" ]; then
   source .venv/bin/activate
 else
    echo ".venv does not exist, let's create it"
-   python -m venv ./.venv
+   python3 -m venv .venv
    source .venv/bin/activate
 fi
 echo "Install dependencies"
